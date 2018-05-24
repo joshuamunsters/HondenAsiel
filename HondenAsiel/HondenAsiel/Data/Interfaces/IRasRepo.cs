@@ -8,7 +8,7 @@ namespace HondenAsiel.Data.Interfaces
 {
     interface IRasRepo
     {
-        IEnumerable<Ras> Rassen { get; set; }
+        IEnumerable<Ras> Rassen { get; }
 
     }
 }
