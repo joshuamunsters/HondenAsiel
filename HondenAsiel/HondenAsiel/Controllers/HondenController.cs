@@ -18,7 +18,7 @@ namespace HondenAsiel.Controllers
             _rasRepo = rasRepo;
         }
 
-        public ViewResult Lijst()
+        public ViewResult HONDEN()
         {
             var honden = _hondenRepo.honden;
             return View(honden);

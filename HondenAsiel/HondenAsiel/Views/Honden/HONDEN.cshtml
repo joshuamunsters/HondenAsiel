@@ -1,0 +1,15 @@
+﻿@using HondenAsiel.Data.Models
+@model IEnumerable<Honden>
+
+    <div>
+        <h1>Een lijst met alle honden!</h1>
+    </div>
+
+@foreach(var hond in Model)
+{
+    <div>
+        <h4>Honden naam: @hond.Naam</h4>
+        <h4>Prijs van hond: @hond.Prijs.ToString("M")</h4>
+    </div>
+
+}
