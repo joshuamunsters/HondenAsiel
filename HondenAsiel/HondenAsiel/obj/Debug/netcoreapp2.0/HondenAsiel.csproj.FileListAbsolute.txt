@@ -1,0 +1,11 @@
+D:\ict\ois\versies killerapp\HondenAsiel\HondenAsiel\HondenAsiel\bin\Debug\netcoreapp2.0\HondenAsiel.deps.json
+D:\ict\ois\versies killerapp\HondenAsiel\HondenAsiel\HondenAsiel\bin\Debug\netcoreapp2.0\HondenAsiel.runtimeconfig.json
+D:\ict\ois\versies killerapp\HondenAsiel\HondenAsiel\HondenAsiel\bin\Debug\netcoreapp2.0\HondenAsiel.runtimeconfig.dev.json
+D:\ict\ois\versies killerapp\HondenAsiel\HondenAsiel\HondenAsiel\bin\Debug\netcoreapp2.0\HondenAsiel.dll
+D:\ict\ois\versies killerapp\HondenAsiel\HondenAsiel\HondenAsiel\bin\Debug\netcoreapp2.0\HondenAsiel.pdb
+D:\ict\ois\versies killerapp\HondenAsiel\HondenAsiel\HondenAsiel\obj\Debug\netcoreapp2.0\HondenAsiel.csprojResolveAssemblyReference.cache
+D:\ict\ois\versies killerapp\HondenAsiel\HondenAsiel\HondenAsiel\obj\Debug\netcoreapp2.0\HondenAsiel.csproj.CoreCompileInputs.cache
+D:\ict\ois\versies killerapp\HondenAsiel\HondenAsiel\HondenAsiel\obj\Debug\netcoreapp2.0\HondenAsiel.AssemblyInfoInputs.cache
+D:\ict\ois\versies killerapp\HondenAsiel\HondenAsiel\HondenAsiel\obj\Debug\netcoreapp2.0\HondenAsiel.AssemblyInfo.cs
+D:\ict\ois\versies killerapp\HondenAsiel\HondenAsiel\HondenAsiel\obj\Debug\netcoreapp2.0\HondenAsiel.dll
+D:\ict\ois\versies killerapp\HondenAsiel\HondenAsiel\HondenAsiel\obj\Debug\netcoreapp2.0\HondenAsiel.pdb
