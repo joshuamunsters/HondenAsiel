@@ -9,7 +9,7 @@ namespace HondenAsiel.Data.Models
     {
         public int HondId { get; set; }
 
-        public int Naam { get; set; }
+        public string Naam { get; set; }
 
         public int Kbeschrijving { get; set; }
 

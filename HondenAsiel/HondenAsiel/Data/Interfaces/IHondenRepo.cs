@@ -8,9 +8,9 @@ namespace HondenAsiel.Data.Interfaces
 {
     interface IHondenRepo
     {
-        IEnumerable<Honden> honden { get; set; }
+        IEnumerable<Honden> honden { get; }
 
-        IEnumerable<Honden> Gewildehonden { get; set; }
+        IEnumerable<Honden> Gewildehonden { get; }
 
         Honden GethondenbyId(int HondId);
 
