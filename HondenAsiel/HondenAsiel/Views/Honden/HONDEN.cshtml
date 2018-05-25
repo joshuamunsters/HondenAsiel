@@ -1,11 +1,12 @@
-﻿@using HondenAsiel.Data.Models
-@model IEnumerable<Honden>
+﻿@using HondenAsiel.ViewModels;
+@model HondenHONDENViewModel
 
     <div>
         <h1>Een lijst met alle honden!</h1>
+        <h2>@Model.HuidigRas</h2>
     </div>
 
-@foreach(var hond in Model)
+@foreach(var hond in Model.honden)
 {
     <div>
         <h4>Honden naam: @hond.Naam</h4>

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using HondenAsiel.Data.Interfaces;
+using HondenAsiel.ViewModels;
 
 namespace HondenAsiel.Controllers
 {
@@ -20,8 +21,11 @@ namespace HondenAsiel.Controllers
 
         public ViewResult HONDEN()
         {
-            var honden = _hondenRepo.honden;
-            return View(honden);
+            HondenHONDENViewModel vm = new HondenHONDENViewModel();
+            vm.honden = _hondenRepo.honden;
+            vm.HuidigRas = "Ras";
+            return View(vm);
+
             
 
         }
