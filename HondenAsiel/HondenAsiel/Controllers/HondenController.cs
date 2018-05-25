@@ -12,7 +12,7 @@ namespace HondenAsiel.Controllers
         private readonly IHondenRepo _hondenRepo;
         private readonly IRasRepo _rasRepo;
 
-        private HondenController(IHondenRepo hondenRepo, IRasRepo rasRepo)
+        public HondenController(IHondenRepo hondenRepo, IRasRepo rasRepo)
         {
             _hondenRepo = hondenRepo;
             _rasRepo = rasRepo;

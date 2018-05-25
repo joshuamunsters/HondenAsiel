@@ -6,7 +6,7 @@ using HondenAsiel.Data.Models;
 
 namespace HondenAsiel.Data.Interfaces
 {
-    interface IRasRepo
+    public interface IRasRepo
     {
         IEnumerable<Ras> Rassen { get; }
 

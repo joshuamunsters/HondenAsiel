@@ -19,6 +19,7 @@ namespace HondenAsiel
         {
             services.AddTransient<IHondenRepo, MockHondenRepo>();
             services.AddTransient<IRasRepo, MockRasRepo>();
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -29,9 +30,11 @@ namespace HondenAsiel
                 app.UseDeveloperExceptionPage();
             }
 
-            app.Run(async (context) =>
+            app.UseMvc(routes =>
             {
-                await context.Response.WriteAsync("Hello World!");
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Honden}/{action=HONDEN}/{id?}");
             });
         }
     }

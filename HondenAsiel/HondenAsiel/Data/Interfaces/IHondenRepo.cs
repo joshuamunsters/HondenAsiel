@@ -6,7 +6,7 @@ using HondenAsiel.Data.Models;
 
 namespace HondenAsiel.Data.Interfaces
 {
-    interface IHondenRepo
+    public interface IHondenRepo
     {
         IEnumerable<Honden> honden { get; }
 
