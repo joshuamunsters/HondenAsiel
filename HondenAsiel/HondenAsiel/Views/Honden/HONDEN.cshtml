@@ -6,7 +6,17 @@
 
 @foreach(var hond in Model.honden)
 {
-    <div>
+    <div class="col-sm-4 col-lg-4 col-md-4" >
+        <div class="thumbnail">
+            <img src="@hond.PicURL" />
+            <div class="caption">
+                <h3 class="pull-right">@hond.Prijs.ToString("c")</h3>
+                <h3>
+                    <a>@hond.Naam</a>
+                </h3>
+                <p>@hond.RasId</p>
+            </div>
+        </div>
         <h4>Honden naam: @hond.Naam</h4>
         <h4>Prijs van hond: @hond.Prijs.ToString("c")</h4>
     </div>
