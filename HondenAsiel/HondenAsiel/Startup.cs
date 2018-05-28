@@ -13,6 +13,7 @@ using HondenAsiel.Data;
 using Microsoft.EntityFrameworkCore;
 using HondenAsiel.Data.Repositories;
 
+
 namespace HondenAsiel
 {
     public class Startup
@@ -54,6 +55,8 @@ namespace HondenAsiel
                     name: "default",
                     template: "{controller=Honden}/{action=HONDEN}/{id?}");
             });
+
+            
         }
     }
 }

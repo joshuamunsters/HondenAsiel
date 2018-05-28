@@ -8,10 +8,9 @@ namespace HondenAsiel.Data
 {
     public class DbInitializer
     {
-        public static void Seed(IApplicationBuilder applicationBuilder)
+        public static void Initialize(AppDbContext context)
         {
-            AppDbContext context =
-                applicationBuilder.ApplicationServices.GetRequiredService<AppDbContext>();
+            context.Database.EnsureCreated();
 
             if (!context.ras.Any())
             {
