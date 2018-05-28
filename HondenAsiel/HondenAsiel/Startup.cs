@@ -11,6 +11,7 @@ using HondenAsiel.Data.Mocks;
 using Microsoft.Extensions.Configuration;
 using HondenAsiel.Data;
 using Microsoft.EntityFrameworkCore;
+using HondenAsiel.Data.Repositories;
 
 namespace HondenAsiel
 {
@@ -32,8 +33,8 @@ namespace HondenAsiel
             //Server configuration
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(_configurationRoot.GetConnectionString("DefaultConnection")));
-            services.AddTransient<IHondenRepo, MockHondenRepo>();
-            services.AddTransient<IRasRepo, MockRasRepo>();
+            services.AddTransient<IHondenRepo, HondenRepo>();
+            services.AddTransient<IRasRepo, RasRepo>();
             services.AddMvc();
 
         }
