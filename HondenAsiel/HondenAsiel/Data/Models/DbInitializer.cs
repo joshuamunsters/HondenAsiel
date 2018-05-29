@@ -8,6 +8,7 @@ namespace HondenAsiel.Data
 {
     public class DbInitializer
     {
+        //https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/intro?view=aspnetcore-2.0 bron die mij heeft geholpen bij het maken van dit
         public static void Initialize(AppDbContext context)
         {
             context.Database.EnsureCreated();
