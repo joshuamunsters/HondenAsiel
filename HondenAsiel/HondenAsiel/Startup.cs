@@ -12,7 +12,7 @@ using Microsoft.Extensions.Configuration;
 using HondenAsiel.Data;
 using Microsoft.EntityFrameworkCore;
 using HondenAsiel.Data.Repositories;
-
+using HondenAsiel.Data.Models;
 
 namespace HondenAsiel
 {
@@ -36,7 +36,14 @@ namespace HondenAsiel
                 options.UseSqlServer(_configurationRoot.GetConnectionString("DefaultConnection")));
             services.AddTransient<IHondenRepo, HondenRepo>();
             services.AddTransient<IRasRepo, RasRepo>();
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped(sp => WinkelWagen.GetCart(sp));
+
             services.AddMvc();
+            services.AddMemoryCache();
+            services.AddSession();
+
 
         }
 
@@ -48,6 +55,8 @@ namespace HondenAsiel
                 app.UseDeveloperExceptionPage();
             }
             app.UseStaticFiles();
+
+            app.UseSession();
 
             app.UseMvc(routes =>
             {
