@@ -1,0 +1,15 @@
+﻿@model HomeViewModel
+
+@await Html.PartialAsync("Carousel")
+
+<h2>Meest gewilde honden!</h2>
+<h4>Klik op de hond voor meer info!</h4>
+
+<div class="row">
+
+    @foreach(var hond in Model.GewildeHonden)
+    {
+        @Html.Partial("HondenOverzicht", hond)
+
+    }
+</div>
