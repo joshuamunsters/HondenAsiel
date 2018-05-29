@@ -16,5 +16,7 @@ namespace HondenAsiel.Data
 
         public DbSet<Honden> honden { get; set; }
         public DbSet<Ras> ras { get; set; }
+
+        public DbSet<WinkelWagenItem> WinkelWagenItems { get; set; }
     }
 }
