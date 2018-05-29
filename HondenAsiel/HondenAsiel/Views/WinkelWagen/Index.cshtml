@@ -1,5 +1,52 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model WinkelWagenViewModel
+<div class="row checkoutForm">
+    <h2>Your shopping cart</h2>
+    <h4>Here are the drinks in your shopping cart.</h4>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Selected amount</th>
+                <th>Drink</th>
+                <th class="text-right">Price</th>
+                <th class="text-right">Subtotal</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var line in Model.WinkelWagen.WinkelWagenItems)
+            {
+                <tr>
+                    <td class="text-center">@line.Hoeveelheid</td>
+                    <td class="text-left">@line.Honden.Naam</td>
+                    <td class="text-right">@line.Honden.Prijs.ToString("c")</td>
+                    <td class="text-right">
+                        @((line.Hoeveelheid * line.Honden.Prijs).ToString("c"))
+                    </td>
+                    <td class="text-center"><a class="glyphicon glyphicon-remove text-danger remove" asp-controller="WinkelWagen" asp-action="RemoveFromWinkelWagen" asp-route-drinkId="@line.Honden.HondId"></a></td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" class="text-right">Total:</td>
+                <td class="text-right">
+                    @Model.WinkelWagenTotaal.ToString("c")
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+    <div class="text-right">
+        <div class="btn-group ">
+            <a class="btn btn-success" asp-controller="Order" asp-action="Checkout">Check out</a>
+            <a class="btn-group">
+                <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    Add more drinks<span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a asp-controller="Honden" asp-action="HONDEN" asp-route-category="Alcoholic">Alcoholic</a></li>
+                    <li><a asp-controller="Honden" asp-action="HONDEN" asp-route-category="Non-alcoholic">Non Alcoholic</a></li>
+                </ul>
+            </a>
+        </div>
+    </div>
+</div>
