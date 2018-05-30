@@ -60,6 +60,7 @@ namespace HondenAsiel
 
             app.UseMvc(routes =>
             {
+                routes.MapRoute(name: "rasfilter", template: "Honden/{action}/{ras?}", defaults: new { Controller="Honden", action="HONDEN"});
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Honden}/{action=HONDEN}/{id?}");
