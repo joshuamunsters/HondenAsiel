@@ -25,6 +25,7 @@
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-controller="Home" asp-action="Index">Home</a></li>     
+                    @await  Component.InvokeAsync("RasMenu")
                     <li><a asp-controller="Contact" asp-action="Index">Contact</a></li>
                     @await Component.InvokeAsync("WinkelWagenOverzicht")
                 </ul>
