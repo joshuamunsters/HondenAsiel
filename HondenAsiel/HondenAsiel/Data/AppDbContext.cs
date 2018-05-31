@@ -18,5 +18,9 @@ namespace HondenAsiel.Data
         public DbSet<Ras> ras { get; set; }
 
         public DbSet<WinkelWagenItem> WinkelWagenItems { get; set; }
+
+        public DbSet<Order> orders { get; set; }
+
+        public DbSet<OrderDetails> orderdetails { get; set; }
     }
 }
