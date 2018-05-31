@@ -38,7 +38,7 @@ namespace HondenAsiel.Controllers
                 }
                 else
                 {
-                    honden = _hondenRepo.honden.Where(p => p.Ras.Rasnaam.Equals("Onbekend")).OrderBy(p => p.Naam);
+                    honden = _hondenRepo.honden.Where(p => p.Ras.Rasnaam.Equals("Moo")).OrderBy(p => p.Naam);
                 }
                 huidigRas = _ras;
             }
