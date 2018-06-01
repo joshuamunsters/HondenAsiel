@@ -39,6 +39,7 @@ namespace HondenAsiel
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped(sp => WinkelWagen.GetCart(sp));
+            services.AddTransient<IOrderRepo, OrderRepo>();
 
             services.AddMvc();
             services.AddMemoryCache();

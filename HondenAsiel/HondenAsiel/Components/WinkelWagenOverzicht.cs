@@ -21,7 +21,7 @@ namespace HondenAsiel.Components
 
         public IViewComponentResult Invoke()
         {
-            var items = new List<WinkelWagenItem>() { new WinkelWagenItem(), new WinkelWagenItem() }; /*_winkelWagen.GetShoppingCartItems();*/
+            var items = _winkelWagen.GetShoppingCartItems();
             _winkelWagen.WinkelWagenItems = items;
 
             var winkelWagenViewModel = new WinkelWagenViewModel
