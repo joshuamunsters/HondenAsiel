@@ -27,5 +27,30 @@ namespace HondenAsiel.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public IActionResult Checkout(Order order)
+        {
+            var items = _winkelWagen.GetShoppingCartItems();
+            _winkelWagen.WinkelWagenItems = items;
+
+            if (_winkelWagen.WinkelWagenItems.Count == 0)
+            {
+                ModelState.AddModelError("", "Winkelwagen is leeg!");
+            }
+
+            if (ModelState.IsValid)
+            {
+                _orderRepo.MaakOrder(order);
+                _winkelWagen.ClearCart();
+                return RedirectToAction("CheckoutComplete");
+            }
+            return View(order);
+        }
+
+        public IActionResult CheckoutComplete()
+        {
+            ViewBag.CheckoutCompleteMessage = "Bedankt voor je order!";
+            return View();
+        }
     }
 }
