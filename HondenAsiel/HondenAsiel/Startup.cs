@@ -13,6 +13,7 @@ using HondenAsiel.Data;
 using Microsoft.EntityFrameworkCore;
 using HondenAsiel.Data.Repositories;
 using HondenAsiel.Data.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace HondenAsiel
 {
@@ -34,6 +35,10 @@ namespace HondenAsiel
             //Server configuration
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(_configurationRoot.GetConnectionString("DefaultConnection")));
+
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<AppDbContext>();
+
             services.AddTransient<IHondenRepo, HondenRepo>();
             services.AddTransient<IRasRepo, RasRepo>();
 
@@ -58,6 +63,10 @@ namespace HondenAsiel
             app.UseStaticFiles();
 
             app.UseSession();
+
+#pragma warning disable CS0618 // Type or member is obsolete
+            app.UseIdentity();
+#pragma warning restore CS0618 // Type or member is obsolete
 
             app.UseMvc(routes =>
             {
