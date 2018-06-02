@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace HondenAsiel.Controllers
 {
+    
     public class AccountController : Controller
     {
         private readonly UserManager<IdentityUser> _userManager;
@@ -21,7 +22,7 @@ namespace HondenAsiel.Controllers
             _userManager = userManager;
             _signInManager = signInManager;
         }
-
+        
         public IActionResult Login(string returnUrl)
         {
             return View(new LoginViewModel
@@ -81,7 +82,7 @@ namespace HondenAsiel.Controllers
 
 
         [HttpPost]
-        
+        [Authorize]
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
