@@ -28,6 +28,7 @@
                     @await  Component.InvokeAsync("RasMenu")
                     <li><a asp-controller="Contact" asp-action="Index">Contact</a></li>
                     @await Component.InvokeAsync("WinkelWagenOverzicht")
+                    @await  Html.PartialAsync("LoginPartial")
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
