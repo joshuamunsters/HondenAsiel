@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using HondenAsiel.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -54,34 +55,37 @@ namespace HondenAsiel.Controllers
 
         }
 
-        //public IActionResult Register() => View();
+        public ActionResult Register()
+        {
+            return View();
+        }
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Register(LoginViewModel loginViewModel)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        var user = new IdentityUser() { UserName = loginViewModel.UserName };
-        //        var result = await _userManager.CreateAsync(user, loginViewModel.Password);
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Register(LoginViewModel loginViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = new IdentityUser() { UserName = loginViewModel.UserName };
+                var result = await _userManager.CreateAsync(user, loginViewModel.Password);
 
-        //        if (result.Succeeded)
-        //        {
-        //            return RedirectToAction("LoggedIn", "Account");
-        //        }
-        //    }
-        //    return View(loginViewModel);
-        //}
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+            return View(loginViewModel);
+        }
 
         //public ViewResult LoggedIn() => View();
 
 
-        //[HttpPost]
-        //[Authorize]
-        //public async Task<IActionResult> Logout()
-        //{
-        //    await _signInManager.SignOutAsync();
-        //    return RedirectToAction("Index", "Home");
-        //}
+        [HttpPost]
+        
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
+        }
     }
 }
