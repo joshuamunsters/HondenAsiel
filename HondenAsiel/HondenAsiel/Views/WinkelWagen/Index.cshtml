@@ -22,7 +22,7 @@
                     <td class="text-right">
                         @((line.Hoeveelheid * line.Honden.Prijs).ToString("c"))
                     </td>
-                    <td class="text-center"><a class="glyphicon glyphicon-remove text-danger remove" asp-controller="WinkelWagen" asp-action="RemoveFromWinkelWagen" asp-route-drinkId="@line.Honden.HondId"></a></td>
+                    <td class="text-center"><a class="glyphicon glyphicon-remove text-danger remove" asp-controller="WinkelWagen" asp-action="RemoveFromWinkelWagen" asp-route-hondId="@line.Honden.HondId"></a></td>
                 </tr>
             }
         </tbody>
