@@ -30,6 +30,11 @@
                     @await Component.InvokeAsync("WinkelWagenOverzicht")
                     @await  Html.PartialAsync("LoginPartial")
                 </ul>
+                <form class="navbar-form navbar-right" asp-controller="Honden" asp-action="Search" method="get">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Zoek een hond!" name="searchString" value="@ViewData["searchString"]">
+                    </div>
+                </form>
             </div><!--/.nav-collapse -->
         </div>
     </nav>

@@ -52,5 +52,23 @@ namespace HondenAsiel.Controllers
             
 
         }
+
+        public ViewResult Search(string searchString)
+        {
+            string _searchString = searchString;
+            IEnumerable<Honden> honden;
+            string currentCategory = string.Empty;
+
+            if (string.IsNullOrEmpty(_searchString))
+            {
+                honden = _hondenRepo.honden.OrderBy(p => p.HondId);
+            }
+            else
+            {
+                honden = _hondenRepo.honden.Where(p => p.Naam.ToLower().Contains(_searchString.ToLower()));
+            }
+
+            return View("~/Views/Honden/HONDEN.cshtml", new HondenHONDENViewModel { honden = honden, HuidigRas = "Alle rassen" });
+        }
     }
 }
