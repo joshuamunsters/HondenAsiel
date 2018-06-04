@@ -29,6 +29,7 @@
                     <li><a asp-controller="Contact" asp-action="Index">Contact</a></li>
                     @await Component.InvokeAsync("WinkelWagenOverzicht")
                     @await  Html.PartialAsync("LoginPartial")
+                    <li><a asp-controller="Admin" asp-action="Index">Admin</a></li>
                 </ul>
                 <form class="navbar-form navbar-right" asp-controller="Honden" asp-action="Search" method="get">
                     <div class="form-group">
